@@ -1,7 +1,7 @@
 server:
   port: 8000
   servlet:
-    context-path: /blog # 기본 path base 설정
+    context-path: /blog
     encoding:
       charset: UTF-8
       enabled: true
@@ -16,8 +16,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
-    username: root
-    password: wlgns2
+    username: cos
+    password: cos1234
 
   jpa:
     open-in-view: true
