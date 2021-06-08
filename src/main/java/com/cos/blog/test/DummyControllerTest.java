@@ -75,10 +75,10 @@ public class DummyControllerTest {
     @GetMapping("/dummy/user/{id}")
     public User detail(@PathVariable int id) {
 
-        User user=userRepository.findById(id).orElseThrow(new Supplier<IllegalStateException>() {
+        User user=userRepository.findById(id).orElseThrow(new Supplier<IllegalArgumentException>() {
             @Override
-            public IllegalStateException get() {
-                return new IllegalStateException("해당 유저는 없습니다."+id);
+            public IllegalArgumentException get() {
+                return new IllegalArgumentException("해당 유저는 없습니다.");
             }
         });
 //        요청: 웹브라우저
