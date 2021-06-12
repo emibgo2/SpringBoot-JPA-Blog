@@ -8,6 +8,7 @@
         <version>2.4.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.cos</groupId>
     <artifactId>blog</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -17,6 +18,11 @@
         <java.version>11</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!-- 추가 라이브러리 시작-->
         <!-- 시큐리티 태그 라이브러리 -->
 
