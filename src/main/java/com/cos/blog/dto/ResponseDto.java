@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @Builder
 public class ResponseDto <T>{
-    HttpStatus status;
+    int status;
     T data;
 }

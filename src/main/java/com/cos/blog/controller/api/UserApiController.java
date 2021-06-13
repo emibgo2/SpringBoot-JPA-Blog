@@ -1,6 +1,7 @@
 package com.cos.blog.controller.api;
 
 import com.cos.blog.dto.ResponseDto;
+import com.cos.blog.model.RoleType;
 import com.cos.blog.model.User;
 import com.cos.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,11 @@ public class UserApiController {
 
 
     @PostMapping("/api/user")
-    public ResponseDto save(@RequestBody User user) {
+    public ResponseDto<Integer> save(@RequestBody User user) {
         System.out.println("UserApiController: save 호출됨");
         // 실제로 DB에  insert를 하고 아래에서 return 이 되면된다.
-        int result = userService.회원가입(user);
-        return new ResponseDto<Integer>(HttpStatus.OK, 1);
+        user.setRole(RoleType.USER);
+        userService.회원가입(user);
+        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 }
