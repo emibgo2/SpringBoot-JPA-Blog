@@ -54,7 +54,7 @@ public class DummyControllerTest {
 
         //userRepository.save(user);
 
-        // 더티 체킹킹
+        // 더티 체킹
        return null;
     }
 
