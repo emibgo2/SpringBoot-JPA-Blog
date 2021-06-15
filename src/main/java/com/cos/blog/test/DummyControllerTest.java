@@ -53,7 +53,9 @@ public class DummyControllerTest {
         user.setEmail(requestUser.getEmail());
 
         //userRepository.save(user);
-        return user;
+
+        // 더티 체킹킹
+       return null;
     }
 
     // http://localhost:8000/blog/dummy/user/
