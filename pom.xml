@@ -26,12 +26,11 @@
         <!-- 추가 라이브러리 시작-->
         <!-- 시큐리티 태그 라이브러리 -->
 
-        <!-- Security
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
-        -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
@@ -56,12 +55,12 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!--
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        -->
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -91,13 +90,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- Security
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-com.cos.blog.test</artifactId>
-            <scope>com.cos.blog.test</scope>
-        </dependency>
-        -->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.security</groupId>-->
+<!--            <artifactId>spring-security-com.cos.blog.test</artifactId>-->
+<!--            <scope>com.cos.blog.test</scope>-->
+<!--        </dependency>-->
+
     </dependencies>
 
     <build>
