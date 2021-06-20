@@ -3,6 +3,10 @@ let index= {
         $("#btn-save").on("click", () => {// function(){}, ()=> {} this를 바인딩하기 위해서
             this.save();
         });
+        $("#btn-delete").on("click", () => {// function(){}, ()=> {} this를 바인딩하기 위해서
+            this.deleteById();
+        });
+
     },
     save: function () {
         // alert('user의 save함수 호출됨');
@@ -28,8 +32,23 @@ let index= {
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
-    }
+    },
+    deleteById: function () {
+        var id = $("#id").text();
+        $.ajax({
+            type: "DELETE",
+            url: "/api/board/"+id,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8"
+        }).done(function (resp) {
+            alert("글 삭제가 완료되었습니다.");
+            // console.log(resp)
+            location.href = "/";
 
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
+    }
 }
 
 index.init()
