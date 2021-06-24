@@ -21,7 +21,7 @@ public class Reply {
     private int id;
 
     @Column(nullable = false,length = 200)
-    private String contetn;
+    private String content;
 
     @ManyToOne
     @JoinColumn(name = "boardId")

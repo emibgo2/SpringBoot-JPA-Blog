@@ -1,5 +1,6 @@
 package com.cos.blog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -38,7 +39,8 @@ public class Board {
     // User 데이터가 One 이기 때문에 foreign key 로 만들어짐
 
     @OneToMany(mappedBy = "board",fetch = FetchType.EAGER) // mappedBy가 적혀잇으면 연관관계의 주인이 아니다( FK가 아니다) , DB에 컬럼을 만들지 마세요
-    private List<Reply> reply;
+    @JsonIgnoreProperties({"board"})
+    private List<Reply> replys;
 
     @CreationTimestamp
     private Timestamp createDate;
