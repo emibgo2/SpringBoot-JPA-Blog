@@ -82,13 +82,14 @@ let index= {
     replySave: function () {
         // alert('user의 save함수 호출됨');
         let data={
+            userId: $("#userId").val(),
+            boardId: $("#boardId").val(),
             content:$("#reply-content").val(),
         };
-        let boardId = $("#boardId").val();
         console.log(data);
         $.ajax({
             type: "POST",
-            url: `/api/board/${boardId}/reply`,
+            url: `/api/board/${data.boardId}/reply`,
             data: JSON.stringify(data), // http body 데이터
             contentType: "application/json; charset=utf-8", // body데이터가 어떤 타입인지(MIME)
             dataType: "json" // 요청을 서버로해서 응답이 왔을때 기본적으로 모든것이 문자열로오는데
@@ -96,7 +97,7 @@ let index= {
         }).done(function (resp) {
             alert("댓글작성이 완료되었습니다.");
             // console.log(resp)
-            location.href = `/board/${boardId}`;
+            location.href = `/board/${data.boardId}`;
 
         }).fail(function (error) {
             alert(JSON.stringify(error));

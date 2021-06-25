@@ -23,6 +23,7 @@
     <hr>
     <div class="card">
         <form>
+            <input type="hidden" id="userId" value="${principal.user.id}">
             <input type="hidden" id="boardId" value="${board.id}">
         <div class="card-body">
             Comment<textarea id="reply-content" class="form-control"  rows="1"></textarea>
