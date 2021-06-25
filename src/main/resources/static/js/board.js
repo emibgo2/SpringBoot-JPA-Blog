@@ -9,7 +9,9 @@ let index= {
         $("#btn-update").on("click", () => {// function(){}, ()=> {} this를 바인딩하기 위해서
             this.update();
         });
-
+        $("#btn-reply-save").on("click", () => {// function(){}, ()=> {} this를 바인딩하기 위해서
+            this.replySave();
+        });
     },
     save: function () {
         // alert('user의 save함수 호출됨');
@@ -73,6 +75,29 @@ let index= {
             alert("글 수정이 완료되었습니다.");
             // console.log(resp)
             location.href = "/";
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
+    },
+    replySave: function () {
+        // alert('user의 save함수 호출됨');
+        let data={
+            content:$("#reply-content").val(),
+        };
+        let boardId = $("#boardId").val();
+        console.log(data);
+        $.ajax({
+            type: "POST",
+            url: `/api/board/${boardId}/reply`,
+            data: JSON.stringify(data), // http body 데이터
+            contentType: "application/json; charset=utf-8", // body데이터가 어떤 타입인지(MIME)
+            dataType: "json" // 요청을 서버로해서 응답이 왔을때 기본적으로 모든것이 문자열로오는데
+            // 생긴게 json이라면 => javascript 오브젝트로 변경 해줌
+        }).done(function (resp) {
+            alert("댓글작성이 완료되었습니다.");
+            // console.log(resp)
+            location.href = `/board/${boardId}`;
+
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });

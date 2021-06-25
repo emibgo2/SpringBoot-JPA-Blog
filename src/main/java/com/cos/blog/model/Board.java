@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.core.annotation.Order;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -40,6 +41,7 @@ public class Board {
 
     @OneToMany(mappedBy = "board",fetch = FetchType.EAGER) // mappedBy가 적혀잇으면 연관관계의 주인이 아니다( FK가 아니다) , DB에 컬럼을 만들지 마세요
     @JsonIgnoreProperties({"board"})
+    @OrderBy("id desc")
     private List<Reply> replys;
 
     @CreationTimestamp
