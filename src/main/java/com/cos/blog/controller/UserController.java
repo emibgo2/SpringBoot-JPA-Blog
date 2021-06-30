@@ -137,7 +137,8 @@ public class UserController {
         System.out.println("블로그서버 패스워드 : "+cosKey);
 
         User kakaoUser = User.builder()
-                .username(kakaoProfile.getKakao_account().getEmail()+"_"+kakaoProfile.getId())
+                .username(kakaoProfile.getKakao_account().getEmail() + "_" + kakaoProfile.getId())
+                .nickName(kakaoProfile.getProperties().nickname)
                 .password(cosKey)
                 .email(kakaoProfile.getKakao_account().getEmail())
                 .oauth("kakao")

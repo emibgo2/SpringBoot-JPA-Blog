@@ -10,6 +10,10 @@ pageEncoding="UTF-8" %>
             <input type="text" class="form-control" placeholder="Enter username" id="username">
         </div>
         <div class="form-group">
+            <label for="nickName">Nick Name</label>
+            <input type="text" class="form-control" placeholder="Enter Nick name" id="nickName">
+        </div>
+        <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" class="form-control" placeholder="Enter password" id="password">
         </div>

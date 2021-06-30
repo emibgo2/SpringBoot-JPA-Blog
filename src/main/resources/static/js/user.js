@@ -11,6 +11,7 @@ let index= {
        // alert('user의 save함수 호출됨');
         let data={
             username:$("#username").val(),
+            nickName:$("#nickName").val(),
             password:$("#password").val(),
             email:$("#email").val(),
         };

@@ -25,6 +25,9 @@ public class User {
     @Column(nullable = false, length = 30,unique = true)
     private String username;// ID
 
+    @Column(nullable = false, length = 30,unique = true)
+    private String nickName;
+
     @Column(nullable = false, length = 100) // 해쉬 화를 위한 자리를 넉넉하게 배정
     private String password;
 
