@@ -36,6 +36,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private RoleType role;// 정확하게는 Enum을 써야 좋다. ( 권한 배정 ) 도메인- 범위가 정해졌다.
 
+    private String oauth; // kakao, google
+
     @CreationTimestamp
     private Timestamp createDate;
 

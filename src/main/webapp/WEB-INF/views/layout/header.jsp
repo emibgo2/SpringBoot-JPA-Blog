@@ -37,11 +37,15 @@
                 </ul>
             </c:when>
             <c:otherwise>
+
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="/board/saveForm">글쓰기</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/user/updateForm">회원 정보</a></li>
+                    <c:if test="${empty principal.user.oauth}">
+                        <li class="nav-item"><a class="nav-link" href="/user/updateForm">회원 정보</a></li>
+                    </c:if>
                     <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
                 </ul>
+
             </c:otherwise>
         </c:choose>
 
