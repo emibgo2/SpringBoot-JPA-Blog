@@ -19,12 +19,17 @@
         <div>
             ${board.content}
         </div>
-
+    <hr>
+        <div>
+            <button type="button" id="btn-like-save" ><img height="38px" src="/image/kakao_login_button.png"/></button>&#160: ${board.boardLike}
+        </div>
     <hr>
     <div class="card">
         <form>
             <input type="hidden" id="userId" value="${principal.user.id}">
             <input type="hidden" id="boardId" value="${board.id}">
+
+
         <div class="card-body">
             Comment<textarea id="reply-content" class="form-control"  rows="1"></textarea>
         </div>

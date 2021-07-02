@@ -24,7 +24,6 @@ import com.cos.blog.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.net.http.HttpRequest;
 import java.util.UUID;
 
 // 인증이 안된 사용자들이 출입할 수 있는 경로를 /auth/***  허용

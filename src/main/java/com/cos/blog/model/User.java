@@ -41,6 +41,7 @@ public class User {
 
     private String oauth; // kakao, google
 
+
     @CreationTimestamp
     private Timestamp createDate;
 

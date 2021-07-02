@@ -38,6 +38,13 @@ public class BoardApiController {
         return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 
+    @PutMapping("/api/board/like/{id}")
+    public ResponseDto<Integer> likeUpdate(@PathVariable int id, @RequestBody Board board) {
+        boardService.좋아요히트(id, board);
+
+        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+    }
+
     //데이터 받을때 컨트롤러에서 DTO를 만들어서 받는게 좋다.
     @PostMapping("/api/board/{boardId}/reply")
     public ResponseDto<Integer> replySave(@RequestBody ReplySaveRequestDto replySaveRequestDto) {
