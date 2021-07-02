@@ -21,7 +21,8 @@
         </div>
     <hr>
         <div>
-            <button type="button" id="btn-like-save" ><img height="38px" src="/image/kakao_login_button.png"/></button>&#160: ${board.boardLike}
+<%--            type="button" id="btn-like-save"--%>
+            <button class="btn btn-white" onClick="index.likeUpdate(${board.id},${board.boardLike})" id="like-button"><h5>♡</h5></button>&#160: ${board.boardLike}
         </div>
     <hr>
     <div class="card">

@@ -38,10 +38,10 @@ public class BoardApiController {
         return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 
-    @PutMapping("/api/board/like/{id}")
-    public ResponseDto<Integer> likeUpdate(@PathVariable int id, @RequestBody Board board) {
-        boardService.좋아요히트(id, board);
-
+    @PutMapping("/api/board/{boardId}/like")
+    public ResponseDto<Integer> likeUpdate(@PathVariable int boardId, @RequestBody Board board) {
+        boardService.좋아요히트(boardId, board);
+        System.out.println("33333333333333333333"+board.getBoardLike());
         return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 

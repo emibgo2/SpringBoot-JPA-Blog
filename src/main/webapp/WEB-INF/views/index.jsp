@@ -33,5 +33,6 @@ pageEncoding="UTF-8" %>
     </ul>
 </div>
 
+<script src="/js/board.js"></script>
 
 <%@include file="layout/footer.jsp"%>
