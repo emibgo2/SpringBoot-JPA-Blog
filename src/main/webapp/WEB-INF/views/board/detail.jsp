@@ -11,19 +11,19 @@
     </c:if>
     <br><br>
     <div>
-        글 번호:<span id="id"><i>${board.id} </i></span>
-           작성자 :<span><i>${board.user.nickName} </i></span>
+        글 번호:<span id="id"><i>${board.id} </i></span> <div class="float-right">조회수: ${board.count}</div>
+        작성자 :<span><i>${board.user.nickName} </i></span>
     </div>
-        <h3>${board.title}</h3>
+    <h3>${board.title}</h3>
     <hr>
-        <div>
-            ${board.content}
-        </div>
+    <div>
+        ${board.content}
+    </div>
     <hr>
-        <div>
-<%--            type="button" id="btn-like-save"--%>
-            <button class="btn btn-white" onClick="index.likeUpdate(${board.id},${board.boardLike})" id="like-button"><h5>♡</h5></button>&#160: ${board.boardLike}
-        </div>
+    <div>
+        <%--            type="button" id="btn-like-save"--%>
+        <button class="btn btn-white" onClick="index.likeUpdate(${board.id},${board.boardLike})" id="like-button"><h5>♡</h5></button>&#160: ${board.boardLike}
+    </div>
     <hr>
     <div class="card">
         <form>
@@ -31,12 +31,12 @@
             <input type="hidden" id="boardId" value="${board.id}">
 
 
-        <div class="card-body">
-            Comment<textarea id="reply-content" class="form-control"  rows="1"></textarea>
-        </div>
-        <div class="card-footer">
-            <button type="button" id="btn-reply-save" class="btn btn-primary">등록</button>
-        </div>
+            <div class="card-body">
+                Comment<textarea id="reply-content" class="form-control"  rows="1"></textarea>
+            </div>
+            <div class="card-footer">
+                <button type="button" id="btn-reply-save" class="btn btn-primary">등록</button>
+            </div>
         </form>
     </div>
     <br>
@@ -49,7 +49,7 @@
                     <div class="d-flex">
                         <div class="font-italic">작성자 : ${reply.user.username} &nbsp;</div>
                         <c:if test="${board.user.id==principal.user.id}">
-                        <button onClick="index.replyDelete(${board.id},${reply.id})" class="badge">삭제</button>
+                            <button onClick="index.replyDelete(${board.id},${reply.id})" class="badge">삭제</button>
                         </c:if>
                     </div>
                 </li>

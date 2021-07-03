@@ -34,6 +34,7 @@ public class BoardController {
     @GetMapping("/board/{id}")
     public String findById(@PathVariable int id, Model model) {
         model.addAttribute("board", boardService.글상세보기(id));
+        boardService.조회수증가(id);
         return "board/detail";
     }
 
@@ -51,6 +52,5 @@ public class BoardController {
 
 
 }
-
 
 
