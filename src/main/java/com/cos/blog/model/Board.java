@@ -43,6 +43,11 @@ public class Board {
     @OrderBy("id desc")
     private List<Reply> replys;
 
+    @OneToMany(mappedBy = "board",fetch = FetchType.LAZY,cascade = CascadeType.REMOVE) // mappedBy가 적혀잇으면 연관관계의 주인이 아니다( FK가 아니다) , DB에 컬럼을 만들지 마세요
+    @JsonIgnoreProperties({"board"})
+    @OrderBy("id desc")
+    private List<BoardLike> boardLikes;
+
     @CreationTimestamp
     private Timestamp createDate;
 

@@ -22,8 +22,23 @@
     <hr>
     <div>
         <%--            type="button" id="btn-like-save"--%>
-        <button class="btn btn-white" onClick="index.likeUpdate(${board.id},${board.boardLike})" id="like-button"><h5>♡</h5></button>&#160: ${board.boardLike}
-    </div>
+<%--        <c:set var="like2" value="${board.boardLikes}">--%>
+<%--            <c:if test="${like2.user.id!=principal.user.id}"  >--%>
+<%--                <button class="btn btn-white" onClick="index.likeUpdate(${board.id},${board.boardLike}), index.likeListUpdate()" id="like-button"><h5>♡</h5></button>&#160: ${board.boardLike}--%>
+<%--            </c:if>--%>
+<%--        </c:set>--%>
+            <c:if test="${like.user.id==principal.user.id}"  >
+                <button class="btn btn-white" onClick="index.likeUpdate(${board.id},${board.boardLike}), index.likeListUpdate()" id="like-button"><h5>♥</h5></button>&#160: ${board.boardLike}
+            </c:if>
+            <button class="btn btn-white" onClick="index.likeUpdate(${board.id},${board.boardLike}), index.likeListUpdate()"><h5>♡</h5></button>&#160: ${board.boardLike}
+
+            <hr>
+    <c:forEach var="like" items="${board.boardLikes}">
+        ${like.user.nickName},${like.user.id}
+
+    </c:forEach>
+
+</div>
     <hr>
     <div class="card">
         <form>

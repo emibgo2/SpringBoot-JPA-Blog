@@ -1,12 +1,14 @@
 package com.cos.blog.service;
 
 import com.cos.blog.controller.BoardController;
+import com.cos.blog.dto.LikeSaveRequestDto;
 import com.cos.blog.dto.ReplySaveRequestDto;
 import com.cos.blog.model.Board;
 import com.cos.blog.model.Reply;
 import com.cos.blog.model.RoleType;
 import com.cos.blog.model.User;
 import com.cos.blog.repository.BoardRepository;
+import com.cos.blog.repository.LikeRepository;
 import com.cos.blog.repository.ReplyRepository;
 import com.cos.blog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,8 @@ public class BoardService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private LikeRepository likeRepository;
 
     @Transactional
     public void 글쓰기(Board board,User user) { // title, Content
@@ -93,6 +97,11 @@ public class BoardService {
                 });
         board.setBoardLike(requestBoard.getBoardLike()+1);
 
+//         해당 함수로 종료시(Service가 종료될 때) 트랜잭션이 종료됩니다. 이때 더티체킹 - 자동 업데이트가 됨. DB Flush
+    }
+    @Transactional
+    public void 좋아요히트(int id,  LikeSaveRequestDto likeSaveRequestDto) {
+        likeRepository.lSave(likeSaveRequestDto.getUserId(), likeSaveRequestDto.getBoardId());
 //         해당 함수로 종료시(Service가 종료될 때) 트랜잭션이 종료됩니다. 이때 더티체킹 - 자동 업데이트가 됨. DB Flush
     }
 

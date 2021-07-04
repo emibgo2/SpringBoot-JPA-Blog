@@ -44,8 +44,8 @@
                         <li class="nav-item"><a class="nav-link" href="/user/updateForm">회원 정보</a></li>
                     </c:if>
                     <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/user/updateForm">안녕하세요 ${principal.user.nickName}님</a></li>
                 </ul>
-
             </c:otherwise>
         </c:choose>
 

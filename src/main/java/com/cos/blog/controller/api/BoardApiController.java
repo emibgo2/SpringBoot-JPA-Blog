@@ -1,11 +1,13 @@
 package com.cos.blog.controller.api;
 
 import com.cos.blog.config.auth.PrincipalDetail;
+import com.cos.blog.dto.LikeSaveRequestDto;
 import com.cos.blog.dto.ReplySaveRequestDto;
 import com.cos.blog.dto.ResponseDto;
 import com.cos.blog.model.Board;
 import com.cos.blog.model.Reply;
 import com.cos.blog.model.User;
+import com.cos.blog.repository.LikeRepository;
 import com.cos.blog.service.BoardService;
 import com.cos.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +42,17 @@ public class BoardApiController {
 
     @PutMapping("/api/board/{boardId}/like")
     public ResponseDto<Integer> likeUpdate(@PathVariable int boardId, @RequestBody Board board) {
+        System.out.println("11111111111111");
         boardService.좋아요히트(boardId, board);
-        System.out.println("33333333333333333333"+board.getBoardLike());
+        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+    }
+
+    @PostMapping("/api/board/{boardId}/like")
+    public ResponseDto<Integer> likeListUpdate(@PathVariable int boardId,@RequestBody LikeSaveRequestDto likeSaveRequestDto) {
+        boardService.좋아요히트(boardId, likeSaveRequestDto);
+        System.out.println("222222222222222222");
+
+        System.out.println(likeSaveRequestDto);
         return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 
